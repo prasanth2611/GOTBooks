@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Books</title>
+</head>
+<body>
+<div>
+
+        <h1 align="center">Game Of Thrones - Books</h1>
+        <br><br>
+        <table  class="booksTable">
+            <thead>
+            <tr>
+                <th >
+                    Book No#
+                    <a href="#"><span ng-click="changeSort('bookNo')" style="padding-right:3px; padding-top: 3px; display:inline-block;">
+
+                    <img alt="loading"  src="{{sort.deriveIcon('bookNo')}}" height="30" width="30"/>
+
+                  </span></a>
+
+                </th>
+                <th >
+                    Book
+                    <a href="#"><span ng-click="changeSort('book')" style="padding-right:3px; padding-top: 3px; display:inline-block;">
+
+                    <img alt="loading"  src="{{sort.deriveIcon('book')}}" height="30" width="30"/>
+
+                   </span></a>
+
+                </th>
+                <th >
+                    No Of Pages
+                    <a href="#"><span  ng-click="changeSort('noOfPages')" style="padding-right:3px; padding-top: 3px; display:inline-block;">
+
+                    <img alt="loading"  src="{{sort.deriveIcon('noOfPages')}}" height="30" width="30"/>
+
+                   </span></a>
+
+                </th>
+                <th >
+                    No Of Characters
+                    <a href="#"><span ng-click="changeSort('noOfCharacters')" style="padding-right:3px; padding-top: 3px; display:inline-block;">
+
+                     <img alt="loading"  src="{{sort.deriveIcon('noOfCharacters')}}" height="30" width="30"/>
+
+                   </span></a>
+
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-show="!books && !error"><td colspan="4">
+                <img alt="loading"  src="icons/loading.gif" height="200" width="200">
+            </td></tr>
+            <tr ng-show="!books && error"><td colspan="4">
+                <p> Failed to load books </p>
+            </td></tr>
+            <tr ng-repeat="book in books|orderBy:sort.sortBy:sort.descending">
+                <td>{{book.bookNo}}</td>
+
+                <td> <a href="#!/books/{{book.id}}">{{book.book}}</a> </td>
+
+                <td>{{book.noOfPages}}</td>
+                <td>{{book.noOfCharacters}}</td>
+            </tr>
+
+            </tbody>
+        </table>
+</div>
+</body>
+</html>

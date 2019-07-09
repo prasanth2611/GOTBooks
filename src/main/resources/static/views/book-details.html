@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookDetails</title>
+</head>
+<body>
+<div>
+    <section ng-show="!book && !error">
+        <table  class="detailsTable">
+            <tr>
+                <td class="details">
+                    <img  alt="loading"  src="icons/loading.gif" height="200" width="200">
+                </td>
+
+            </tr>
+        </table>
+
+    </section>
+    <section ng-show="!book && error">
+        <table  class="detailsTable">
+            <tr>
+                <td class="details">
+                    <p> Failed to load book </p>
+                </td>
+
+            </tr>
+        </table>
+
+    </section>
+    <section ng-show="book">
+        <h1 align="center">{{book.book}}</h1>
+        <br><br>
+        <table  class="detailsTable">
+            <tr>
+                <td class="details">
+                    <h4>No of Pages: {{book.noOfPages}}</h4>
+                    <h4>Publisher: {{book.publisher}}</h4>
+                    <h4>Country: {{book.country}}</h4>
+                    <h4> Media Type: {{book.mediaType}}</h4>
+                    <h4>Released: {{book.released}}</h4>
+                    <h4>Total Characters: {{book.noOfCharacters}}</h4>
+                </td>
+                <td class="createReview">
+                    <section ng-show="!addingReview">
+                        <textarea cols="42" rows="7" ng-model="reviewContent"></textarea><br>
+                        <input ng-click="addReview()" style="width: 150px;height: 30px;background-color: blue;font-size: 16px" type="button" value="ADD REVIEW">
+                    </section>
+                    <section ng-show="addingReview">
+                        <img alt="loading"  src="icons/loading.gif" height="100" width="100">
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td class="reviews" colspan="2">
+                    <h3>Reviews</h3>
+                    <img ng-show="!reviews && !reviewLoadError" g alt="loading"  src="icons/loading.gif" height="50" width="50">
+                    <h4 ng-show="!reviews && reviewLoadError"> Failed to load reviews</h4>
+                    <h4 ng-repeat="review in reviews">{{ review }}<br>-------------------</h4>
+
+                </td>
+            </tr>
+        </table>
+    </section>
+
+</div>
+</body>
+</html>

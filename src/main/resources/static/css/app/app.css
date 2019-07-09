@@ -1,0 +1,57 @@
+
+.booksTable tbody tr:nth-of-type(odd){
+    background-color: #e1e0da;
+}
+.booksTable tbody tr:nth-of-type(even){
+    background-color: #ebebeb;
+}
+.booksTable thead tr{
+    background-color: #ebebeb;
+}
+.booksTable tbody tr td{
+    border-top: 1px solid black;
+}
+.booksTable thead tr th{
+    border-bottom: 1px solid black;
+}
+.booksTable tr td{
+     border-left: 1px solid black;
+     padding: 8px;
+     vertical-align: middle;
+     text-align: center;
+ }
+.booksTable tr th{
+    border-left: 1px solid black;
+    padding: 8px;
+    vertical-align: middle;
+    text-align: center;
+}
+.booksTable{
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    table-layout : fixed;
+}
+.detailsTable{
+    width: 100%;
+    max-width: 100%;
+    table-layout : fixed;
+}
+.details{
+    padding: 8px;
+    vertical-align: middle;
+    text-align: center;
+}
+.createReview{
+    padding: 8px;
+    vertical-align: middle;
+    text-align: center;
+}
+.reviews{
+    padding: 8px;
+    vertical-align: middle;
+}
+img {
+    vertical-align: middle;
+}
